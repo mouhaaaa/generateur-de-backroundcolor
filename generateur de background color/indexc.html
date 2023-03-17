@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>generateur de background color</title>
+    <link rel="stylesheet" href="stylec.css">
+</head>
+<body>
+    <div class="color">
+        <span id="hex">#e74c3c</span>
+        <button onclick="getNewColor()">Get New  Color</button>
+    </div>
+
+
+    <script type="text/javascript">
+        setInterval(getNewColor, 2000);
+
+        function getNewColor() {
+            var symbols,color;
+            symbols="0123456789ABCDEF";
+
+            color = "#";
+            for(var i =0;i<6;i++){
+                color=color + symbols[Math.floor(Math.random() * 16)];
+            }
+            document.body.style.background = color;
+            document.getElementById("hex").innerHTML = color;
+        }
+    </script>
+</body>
+</html>
